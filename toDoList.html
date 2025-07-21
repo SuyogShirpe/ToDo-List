@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #111;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      p {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      input,
+      button {
+        padding: 10px 12px;
+        margin: 10px 6px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: 0.3s ease;
+      }
+
+      .taskInput,
+      .dueDateInput {
+        background-color: #222;
+        color: #fff;
+        border: 1px solid #444;
+      }
+
+      .taskInput:focus,
+      .dueDateInput:focus {
+        outline: none;
+        border-color: #fff;
+      }
+
+      button {
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+      }
+
+      .toDo-list {
+        width: 100%;
+        max-width: 500px;
+        margin-top: 30px;
+      }
+
+      .toDo-list p {
+        background-color: #1a1a1a;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .toDo-list button {
+        background-color: #e74c3c;
+        color: white;
+        font-size: 0.9rem;
+        padding: 6px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>ToDo List</p>
+    <input placeholder="enter task" class="taskInput" />
+    <input type="date" class="dueDateInput" />
+    <button onclick="addToDo()">add</button>
+
+    <div class="toDo-list"></div>
+
+
+
+
+<script>
+      const toDoList = [{ task: "make dinner", dueDate: "2025-07-20" }];
+      updateToDoList();
+
+
+      function updateToDoList() {
+        toDoListHTML = "";
+
+        for (let i = 0; i < toDoList.length; i++) {
+          const task = toDoList[i].task;
+          const dueDate = toDoList[i].dueDate;
+          const html = `
+          <p>
+            ${task} ${dueDate}
+            <button onclick="
+             toDoList.splice(${i},1);
+             updateToDoList();
+            ">delete</button>
+          </p>
+          `;
+          toDoListHTML += html;
+        }
+        document.querySelector(".toDo-list").innerHTML = toDoListHTML;
+      }
+
+
+      function addToDo() {
+        const taskInputEle = document.querySelector(".taskInput");
+        const task = taskInputEle.value;
+        const dateInputEle = document.querySelector(".dueDateInput");
+        const dueDate = dateInputEle.value;
+
+        toDoList.push({
+          task: task,
+          dueDate: dueDate,
+        });
+
+        taskInputEle.value = "";
+        updateToDoList();
+      }
+</script>
+  </body>
+</html>
