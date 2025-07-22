@@ -12,7 +12,7 @@ Tasks are stored in your browser using `localStorage` for seamless offline acces
 - [x] Add tasks with due dates  
 - [x] Delete tasks individually  
 - [x] Data persists using `localStorage`  
-- [x] Clean, dark UI  
+- [x] Clean, light UI  
 - [ ] Edit tasks *(coming soon)*  
 - [ ] Mark tasks as completed *(coming soon)*
 
@@ -45,7 +45,7 @@ Or drag and drop `index.html` into your browser window.
 ```html
 <input placeholder="enter task" class="taskInput" />
 <input type="date" class="dueDateInput" />
-<button onclick="addToDo()">add</button>
+<button onclick="addToDo()" class="addBtn>add</button>
 ```
 
 ```js
@@ -74,6 +74,4 @@ Pull requests are welcome! For major changes, please open an issue first to disc
 
 ---
 
-### 🔗 Connect
 
-Let me know if you'd like your social links (LinkedIn/GitHub/Portfolio) added here!
