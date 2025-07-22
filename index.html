@@ -91,7 +91,7 @@
 
 
 <script>
-      const toDoList = [{ task: "make dinner", dueDate: "2025-07-20" }];
+      const toDoList = JSON.parse(localStorage.getItem('toDoList'));
       updateToDoList();
 
 
@@ -113,6 +113,7 @@
           toDoListHTML += html;
         }
         document.querySelector(".toDo-list").innerHTML = toDoListHTML;
+        localStorage.setItem('toDoList',JSON.stringify(toDoList));
       }
 
 
