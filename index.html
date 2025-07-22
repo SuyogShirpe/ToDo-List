@@ -87,13 +87,18 @@
 
     <div class="toDo-list"></div>
 
-
-
-
-<script>
-      const toDoList = JSON.parse(localStorage.getItem('toDoList'));
+    <script>
+      const toDoList = JSON.parse(localStorage.getItem("toDoList")) || [
+        {
+          name: "make dinner",
+          dueDate: "2025-12-22",
+        },
+        {
+          name: "wash dishes",
+          dueDate: "2025-12-20",
+        },
+      ];
       updateToDoList();
-
 
       function updateToDoList() {
         toDoListHTML = "";
@@ -107,15 +112,14 @@
             <button onclick="
              toDoList.splice(${i},1);
              updateToDoList();
+             saveLocalStorage();
             ">delete</button>
           </p>
           `;
           toDoListHTML += html;
         }
         document.querySelector(".toDo-list").innerHTML = toDoListHTML;
-        localStorage.setItem('toDoList',JSON.stringify(toDoList));
       }
-
 
       function addToDo() {
         const taskInputEle = document.querySelector(".taskInput");
@@ -130,7 +134,12 @@
 
         taskInputEle.value = "";
         updateToDoList();
+        saveLocalStorage();
       }
-</script>
+
+      function saveLocalStorage() {
+        localStorage.setItem("toDoList", JSON.stringify(toDoList));
+      }
+    </script>
   </body>
 </html>
