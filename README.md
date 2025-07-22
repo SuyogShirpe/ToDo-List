@@ -4,9 +4,6 @@
 A simple, fast, and responsive **ToDo list** app built with **HTML**, **CSS**, and **JavaScript** – with **no frameworks**!  
 Tasks are stored in your browser using `localStorage` for seamless offline access.
 
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Built with JavaScript](https://img.shields.io/badge/Built%20with-JavaScript-yellow)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Live Demo](https://img.shields.io/badge/Demo-Open%20index.html%20in%20browser-brightgreen)](#live-demo)
 
 ---
 
@@ -18,17 +15,6 @@ Tasks are stored in your browser using `localStorage` for seamless offline acces
 - [x] Clean, dark UI  
 - [ ] Edit tasks *(coming soon)*  
 - [ ] Mark tasks as completed *(coming soon)*
-
----
-
-## 📸 Preview
-
-<details>
-  <summary>Click to expand screenshot</summary>
-
-  ![screenshot](https://via.placeholder.com/800x400?text=ToDo+List+Preview)
-
-</details>
 
 ---
 
@@ -81,11 +67,6 @@ localStorage.setItem('toDoList', JSON.stringify(toDoList));
 
 ---
 
-## 🪪 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🙋‍♂️ Contributing
 
