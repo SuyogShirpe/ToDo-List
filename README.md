@@ -45,7 +45,7 @@ Or drag and drop `index.html` into your browser window.
 ```html
 <input placeholder="enter task" class="taskInput" />
 <input type="date" class="dueDateInput" />
-<button onclick="addToDo()" class="addBtn>add</button>
+<button onclick="addToDo()" class="addBtn">add</button>
 ```
 
 ```js
